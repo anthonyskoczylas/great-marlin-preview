@@ -287,6 +287,7 @@ a{color:inherit}
 .on-pacific{background:var(--pacific);color:var(--hull)} /* sand field (Tony 10-10: option C, less blue) */
 .on-dark{background:var(--hull);color:var(--tower)}
 .on-light{background:var(--tower);color:var(--hull)}
+#rates + #boat{border-top:1px solid var(--rule-light)} /* prices moved under the water (10-10): two white fields meet here */
 .sec{padding:clamp(88px,13vh,160px) 0}
 #water h2{font-size:clamp(1.62rem,3.48vw,3.6rem);max-width:17ch}
 #water .lede-row{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
@@ -616,6 +617,61 @@ a{color:inherit}
   </div>
 </section>
 
+
+<!-- ================= RATES ================= -->
+<section id="rates" class="sec on-light">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="d">One boat. Six ways to spend the day.</h2>
+      <p>Every price is for your group, not per head. Nobody else shares your day.</p>
+    </div>
+    <div class="rates">
+      <div class="rate">
+        <h3 class="d"><a href="full-day-fishing-charter.html">Full day</a></h3>
+        <p class="desc">Offshore, past the drop, sailfish water. Lunch, beer, water and fruit aboard.</p>
+        <p class="price">$1,750<small>Up to six guests</small></p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=full">Plan this day</a><a class="wa" href="full-day-fishing-charter.html">Trip details</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20full%20day%20offshore." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+      <div class="rate">
+        <h3 class="d"><a href="half-day-fishing-charter.html">Half day</a></h3>
+        <p class="desc">Mornings, inshore and nearshore: roosterfish, cubera, jacks. Beer, water, fruit and snacks aboard.</p>
+        <p class="price">$1,350<small>Up to six guests</small></p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=half">Plan this day</a><a class="wa" href="half-day-fishing-charter.html">Trip details</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20half%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+      <div class="rate">
+        <h3 class="d">Surf day</h3>
+        <p class="desc">A reef we don&#8217;t name. White sand, empty on purpose, boat access only. Provisioned like the full day.</p>
+        <p class="price">$1,250<small>Up to six &#183; six hours</small></p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=surf">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20surf%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+      <div class="rate">
+        <h3 class="d">Tortuga Island</h3>
+        <p class="desc">A day at the island. White sand, water clear enough to snorkel, no rods.</p>
+        <p class="price">$1,550<small>Up to eight guests</small></p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=tortuga">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20Tortuga%20Island%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+      <div class="rate">
+        <h3 class="d">Sunset cruise</h3>
+        <p class="desc">The last hour of light, the coast from the water, an easy evening run.</p>
+        <p class="price req">On request</p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=sunset">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20sunset%20cruise." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+      <div class="rate">
+        <h3 class="d">Custom &amp; events</h3>
+        <p class="desc">Multi-day runs, film days, occasions.</p>
+        <p class="price req">On request</p>
+        <div class="go"><a class="btn btn-flag" href="book.html?day=custom">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20a%20custom%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
+      </div>
+    </div>
+    <p class="math"><b>The guest math.</b> Fishing days seat six, each guest beyond that is $100. Surf and island days run to ten, each guest past the base is $40.</p>
+    <div class="beyond">
+      <a class="textlink" href="transportation.html">Transportation, door to dock</a>
+      <a class="textlink" href="tours.html">Tours for the days you&#8217;re not fishing</a>
+      <a class="textlink" href="first-time-offshore.html">Your first day offshore</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= THE BOAT ================= -->
 <section id="boat" class="sec on-light">
   <div class="wrap">
@@ -706,60 +762,6 @@ a{color:inherit}
         <li><img src="assets/fish/cubera.webp" alt="" loading="lazy" decoding="async"><span class="nm">Cubera snapper</span><span class="ss">All year &#183; Jul&#8211;Dec strongest</span><span class="nt">A brawler that lives in the rocks and knows it.</span></li>
         <li><img src="assets/fish/jack.webp" alt="" loading="lazy" decoding="async"><span class="nm">Jack crevalle</span><span class="ss">All year &#183; inshore</span><span class="nt">Pound for pound, the meanest pull of the day.</span></li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ================= RATES ================= -->
-<section id="rates" class="sec on-light">
-  <div class="wrap">
-    <div class="head">
-      <h2 class="d">One boat. Six ways to spend the day.</h2>
-      <p>Every price is for your group, not per head. Nobody else shares your day.</p>
-    </div>
-    <div class="rates">
-      <div class="rate">
-        <h3 class="d"><a href="full-day-fishing-charter.html">Full day</a></h3>
-        <p class="desc">Offshore, past the drop, sailfish water. Lunch, beer, water and fruit aboard.</p>
-        <p class="price">$1,750<small>Up to six guests</small></p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=full">Plan this day</a><a class="wa" href="full-day-fishing-charter.html">Trip details</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20full%20day%20offshore." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-      <div class="rate">
-        <h3 class="d"><a href="half-day-fishing-charter.html">Half day</a></h3>
-        <p class="desc">Mornings, inshore and nearshore: roosterfish, cubera, jacks. Beer, water, fruit and snacks aboard.</p>
-        <p class="price">$1,350<small>Up to six guests</small></p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=half">Plan this day</a><a class="wa" href="half-day-fishing-charter.html">Trip details</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20half%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-      <div class="rate">
-        <h3 class="d">Surf day</h3>
-        <p class="desc">A reef we don&#8217;t name. White sand, empty on purpose, boat access only. Provisioned like the full day.</p>
-        <p class="price">$1,250<small>Up to six &#183; six hours</small></p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=surf">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20surf%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-      <div class="rate">
-        <h3 class="d">Tortuga Island</h3>
-        <p class="desc">A day at the island. White sand, water clear enough to snorkel, no rods.</p>
-        <p class="price">$1,550<small>Up to eight guests</small></p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=tortuga">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20Tortuga%20Island%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-      <div class="rate">
-        <h3 class="d">Sunset cruise</h3>
-        <p class="desc">The last hour of light, the coast from the water, an easy evening run.</p>
-        <p class="price req">On request</p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=sunset">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20sunset%20cruise." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-      <div class="rate">
-        <h3 class="d">Custom &amp; events</h3>
-        <p class="desc">Multi-day runs, film days, occasions.</p>
-        <p class="price req">On request</p>
-        <div class="go"><a class="btn btn-flag" href="book.html?day=custom">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20a%20custom%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
-      </div>
-    </div>
-    <p class="math"><b>The guest math.</b> Fishing days seat six, each guest beyond that is $100. Surf and island days run to ten, each guest past the base is $40.</p>
-    <div class="beyond">
-      <a class="textlink" href="transportation.html">Transportation, door to dock</a>
-      <a class="textlink" href="tours.html">Tours for the days you&#8217;re not fishing</a>
-      <a class="textlink" href="first-time-offshore.html">Your first day offshore</a>
     </div>
   </div>
 </section>
