@@ -115,7 +115,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=8" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=9" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -238,11 +238,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=8') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=9') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=14');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=15');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -488,6 +488,19 @@ a{color:inherit}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,5vw,80px)}
 .foot .big{font-size:clamp(1.92rem,4.8vw,4.2rem)}
 .foot .about{margin-top:18px;max-width:38ch;color:var(--soft-on-dark)}
+#ig .ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+#ig h2{font-size:clamp(1.62rem,3.48vw,3.6rem)}
+.ig-kick{display:flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:80%;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem;color:var(--flag-on-light);margin-bottom:14px}
+.ig-kick svg{width:22px;height:22px}
+.ig-sub{margin-top:12px;max-width:46ch;color:var(--soft-on-light);font-size:1.0625rem}
+.ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ig-tile{display:block;aspect-ratio:1/1;overflow:hidden;background:var(--hull)}
+.ig-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease),opacity .3s}
+.ig-tile:hover img{transform:scale(1.04);opacity:.9}
+@media(max-width:860px){.ig-grid{grid-template-columns:1fr 1fr}}
+.foot-ig{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:clamp(36px,6vh,56px);margin-bottom:clamp(36px,6vh,56px);border-bottom:1px solid var(--rule-dark)}
+.foot-ig p{display:flex;align-items:center;gap:12px;font-family:var(--headline);text-transform:uppercase;font-size:clamp(1rem,1.8vw,1.4rem);line-height:1.2}
+.foot-ig svg{width:26px;height:26px;flex:none}
 .foot-contact{list-style:none;margin-top:18px;display:grid;gap:8px}.foot-contact a{color:var(--tower);text-decoration:none;border-bottom:1px solid var(--rule-dark);font-weight:600}.foot-contact a:hover{border-color:var(--tower)}
 .foot .fh{font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem;color:var(--flag);margin-bottom:14px}
 .foot ul{list-style:none;display:grid;gap:10px}
@@ -554,7 +567,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=8"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=9"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -799,6 +812,26 @@ a{color:inherit}
     </ul>
   </div>
 </section>
+
+<!-- ================= INSTAGRAM ================= -->
+<section id="ig" class="sec on-light">
+  <div class="wrap">
+    <div class="ig-head">
+      <div>
+        <p class="ig-kick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg><span>@greatmarlincr</span></p>
+        <h2 class="d">Follow the boat.</h2>
+        <p class="ig-sub">Today's catch, the morning run, the crew at work. See what the water's doing before you book.</p>
+      </div>
+      <a class="btn btn-flag" href="https://www.instagram.com/greatmarlincr/" target="_blank" rel="noopener">Follow on Instagram</a>
+    </div>
+    <div class="ig-grid">
+      <a class="ig-tile" href="https://www.instagram.com/greatmarlincr/" target="_blank" rel="noopener" aria-label="Great Marlin on Instagram"><img src="assets/photos/crew-sailfish.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 40%"></a>
+      <a class="ig-tile" href="https://www.instagram.com/greatmarlincr/" target="_blank" rel="noopener" aria-label="Great Marlin on Instagram"><img src="assets/photos/sail-jump.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 40%"></a>
+      <a class="ig-tile" href="https://www.instagram.com/greatmarlincr/" target="_blank" rel="noopener" aria-label="Great Marlin on Instagram"><img src="assets/photos/roosterfish.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 35%"></a>
+      <a class="ig-tile" href="https://www.instagram.com/greatmarlincr/" target="_blank" rel="noopener" aria-label="Great Marlin on Instagram"><img src="assets/photos/family-mahi.jpg" alt="" loading="lazy" decoding="async" style="object-position:50% 65%"></a>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer class="foot">
@@ -909,7 +942,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=5' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=6' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);
