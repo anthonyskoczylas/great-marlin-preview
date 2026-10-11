@@ -114,7 +114,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=7" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=8" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -237,11 +237,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=7') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=8') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=13');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=14');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -487,6 +487,7 @@ a{color:inherit}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,5vw,80px)}
 .foot .big{font-size:clamp(1.92rem,4.8vw,4.2rem)}
 .foot .about{margin-top:18px;max-width:38ch;color:var(--soft-on-dark)}
+.foot-contact{list-style:none;margin-top:18px;display:grid;gap:8px}.foot-contact a{color:var(--tower);text-decoration:none;border-bottom:1px solid var(--rule-dark);font-weight:600}.foot-contact a:hover{border-color:var(--tower)}
 .foot .fh{font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem;color:var(--flag);margin-bottom:14px}
 .foot ul{list-style:none;display:grid;gap:10px}
 .foot ul a{text-decoration:none;color:var(--soft-on-dark);transition:color .3s}
@@ -544,6 +545,7 @@ a{color:inherit}
   <div class="sheet-foot">
     <a class="btn btn-flag" href="book.html">Plan my day</a>
     <a class="btn btn-line" href="https://wa.me/13213561951" target="_blank" rel="noopener"><span>WhatsApp us</span></a>
+    <a class="btn btn-line" href="mailto:greatmarlincr@gmail.com?subject=Charter%20question"><span>Email us</span></a>
   </div>
 </nav>
 
@@ -551,7 +553,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=7"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=8"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -563,6 +565,7 @@ a{color:inherit}
         <a class="btn btn-flag" href="book.html">Plan my day
           <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9h11M10 4.5L14.5 9 10 13.5"/></svg></a>
         <a class="btn btn-line" href="https://wa.me/13213561951" target="_blank" rel="noopener"><span>WhatsApp us</span></a>
+        <a class="btn btn-line" href="mailto:greatmarlincr@gmail.com?subject=Charter%20question"><span>Email us</span></a>
       </div>
     </div>
     <div class="st st-line" id="st2"><h2 class="d">An hour out, the floor is a mile down.</h2></div>
@@ -776,7 +779,7 @@ a{color:inherit}
       <a class="btn btn-flag" href="book.html">Plan my day
         <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9h11M10 4.5L14.5 9 10 13.5"/></svg></a>
       <a class="btn btn-line" href="https://wa.me/13213561951" target="_blank" rel="noopener"><span>WhatsApp us</span></a>
-      <a class="btn btn-line" href="mailto:greatmarlincr@gmail.com?subject=Charter%20booking%20request"><span>Email</span></a>
+      <a class="btn btn-line" href="mailto:greatmarlincr@gmail.com?subject=Charter%20booking%20request"><span>Email us</span></a>
     </div>
   </div>
 </section>
@@ -786,10 +789,12 @@ a{color:inherit}
   <div class="wrap grid">
     <h2 class="d">Half now. The rest on the dock.</h2>
     <ul class="rules">
-      <li><b>50% holds your date</b>The balance is settled the day of the trip.</li>
-      <li><b>Cancel 14+ days out</b>The deposit comes back to you.</li>
-      <li><b>Cancel inside 14 days</b>The deposit is kept. The date was held for you.</li>
+      <li><b>50% holds your date</b>Paid by Zelle, Venmo or PayPal. The details come with your confirmation.</li>
+      <li><b>The rest, in cash on the day</b>US dollars, settled at the dock before lines off.</li>
+      <li><b>Cancel 10+ days out</b>The deposit comes back to you.</li>
+      <li><b>Cancel inside 10 days</b>The deposit is kept. The date was held for you.</li>
       <li><b>Rain or shine</b>Rain on this coast is an afternoon event most of the year, and the fish are already wet. Only weather that closes the port calls off a day.</li>
+      <li><b>If we call it off, you're covered</b>When the captain or the port closes the water for safety, we move you to another date or refund your deposit in full. Your choice.</li>
     </ul>
   </div>
 </section>
@@ -801,6 +806,10 @@ a{color:inherit}
       <div>
         <img class="foot-logo" src="assets/logo/gm-logo.png" alt="Great Marlin, Herradura Bay, Costa Rica" width="900" height="725" loading="lazy" decoding="async">
         <p class="about">A 36-foot sportfisher working the drop off Herradura Bay, Costa Rica. One boat, one crew, your group only.</p>
+        <ul class="foot-contact">
+          <li><a href="mailto:greatmarlincr@gmail.com">greatmarlincr@gmail.com</a></li>
+          <li><a href="https://wa.me/13213561951" target="_blank" rel="noopener">WhatsApp +1 321 356 1951</a></li>
+        </ul>
       </div>
       <div>
         <h2 class="fh">Trips</h2>
@@ -898,7 +907,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=4' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=5' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);

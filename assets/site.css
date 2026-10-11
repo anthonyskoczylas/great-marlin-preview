@@ -183,6 +183,7 @@ a{color:inherit}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px)}
 @media(max-width:860px){.cols{grid-template-columns:1fr;gap:40px}}
 .cols h3{font-family:var(--headline);font-stretch:100%;font-weight:400;text-transform:uppercase;font-size:clamp(1.14rem,1.8vw,1.56rem);line-height:1.1}
+.cols h3.not-inc{margin-top:clamp(28px,4vh,44px)}
 .tick{list-style:none;margin-top:18px;border-top:2px solid currentColor}
 .tick li{padding:14px 0 14px 26px;border-bottom:1px solid var(--rule-light);position:relative;color:var(--soft-on-light)}
 .band-deep .tick li{border-bottom-color:var(--rule-dark);color:var(--soft-on-dark)}
@@ -240,6 +241,7 @@ figcaption{margin-top:10px;font-family:var(--display);font-stretch:80%;font-weig
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(28px,5vw,80px)}
 .foot .big{font-size:clamp(1.92rem,4.8vw,4.2rem)}
 .foot .about{margin-top:18px;max-width:38ch;color:var(--soft-on-dark)}
+.foot-contact{list-style:none;margin-top:18px;display:grid;gap:8px}.foot-contact a{color:var(--tower);text-decoration:none;border-bottom:1px solid var(--rule-dark);font-weight:600}.foot-contact a:hover{border-color:var(--tower)}
 .foot .fh{font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem;color:var(--flag);margin-bottom:14px}
 .foot ul{list-style:none;display:grid;gap:10px}
 .foot ul a{text-decoration:none;color:var(--soft-on-dark);transition:color .3s}
@@ -319,6 +321,10 @@ form.off{display:none}
 .sent.ok h3{color:var(--hull)}
 .sent.ok h3::before{content:"";display:block;width:56px;height:6px;background:var(--flag);margin-bottom:16px}
 .sent.ok .copybox,.sent.ok .sendrow{display:none}
+.paybox{margin-top:28px;padding:24px 26px;border:1px solid var(--rule-light);background:rgba(19,23,24,.03)}
+.paybox h4{font-family:var(--display);font-stretch:80%;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.875rem;color:var(--flag-on-light)}
+.paybox ol{margin:14px 0 0;padding-left:1.2em;display:grid;gap:8px;line-height:1.5}
+.paybox .fine{margin-top:14px}
 .copybox{white-space:pre-wrap;font-family:var(--mono);font-size:.8125rem;line-height:1.7;color:var(--soft-on-light);padding:18px;background:var(--tower);margin-top:20px}
 .plan-help{max-width:62rem;margin:22px auto 0;padding:0 var(--pad);color:var(--soft-on-light);text-align:center}
 .plan-help a{color:var(--hull);font-weight:700;text-decoration:none;border-bottom:2px solid var(--flag-on-light)}
@@ -356,3 +362,55 @@ form.off{display:none}
 @media(max-width:520px){.brand-mark{height:18px}.brand{gap:7px}}
 /* footer logo = the full-colour logo on a white card, same as on the white sections (Tony 10-10) */
 .foot-logo{background:#fff;padding:22px 26px 18px;border-radius:14px;box-sizing:border-box;width:min(320px,82%)}
+
+/* planner: several days in one request (10-10). The added days sit in a hull-ruled box over the steps;
+   the day on screen joins them when the request goes. */
+.plan .days{border:2px solid var(--hull);margin:0 0 clamp(24px,4vh,36px)}
+.plan .days-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding:12px 16px;background:var(--hull);color:var(--tower)}
+.plan .days-head .m-dim{opacity:.75}
+.plan .days-list{list-style:none}
+.plan .days-list li{display:grid;grid-template-columns:1fr auto auto;gap:6px 18px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--rule-light)}
+.plan .days-list b{display:block;font-family:var(--headline);font-stretch:100%;font-weight:400;text-transform:uppercase;font-size:.95rem;line-height:1.2}
+.plan .days-list .m{display:block;margin-top:4px;color:var(--soft-on-light)}
+.plan .days-price{font-family:var(--headline);font-stretch:100%;font-size:1rem;white-space:nowrap}
+.plan .rm{appearance:none;-webkit-appearance:none;background:none;border:0;border-bottom:2px solid var(--flag-on-light);padding:2px 0;cursor:pointer;color:var(--hull);
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.75rem}
+.plan .rm:hover{color:var(--flag-on-light)}
+.plan .sum .rm{margin-left:10px;vertical-align:baseline}
+.plan .days-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline;padding:12px 16px}
+.plan .days-foot .m-dim{color:var(--soft-on-light);opacity:1}
+.plan .days-foot b{font-family:var(--headline);font-stretch:100%;font-weight:400;font-size:1.3rem;line-height:1.1}
+.plan .days-done{margin:0 16px 16px;font-size:.875rem;padding:12px 16px 11px}
+.plan .addrow{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;margin-top:22px}
+.plan .addrow .btn{font-size:.875rem;padding:12px 16px 11px;border-color:var(--flag-on-light);color:var(--flag-on-light)}
+.plan .addrow .btn:hover{background:var(--flag-on-light);border-color:var(--flag-on-light);color:#fff}
+.plan .addrow .fine{margin:0;flex:1 1 260px;font-size:.875rem}
+.plan .addrow-send{margin-top:16px}
+
+/* planner: optional map pin for the pickup */
+.plan .stay-row{display:flex;gap:8px;align-items:stretch}
+.plan .stay-row input{flex:1 1 auto;min-width:0}
+.plan .pin-btn{display:inline-flex;align-items:center;gap:8px;flex:0 0 auto;padding:0 16px;border:2px solid var(--hull);background:#fff;color:var(--hull);cursor:pointer;
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.875rem;white-space:nowrap;transition:background .25s,color .25s}
+.plan .pin-btn:hover{background:var(--hull);color:var(--tower)}
+.plan .pin-btn:disabled{opacity:.6;cursor:wait}
+.plan .pin-btn svg{width:18px;height:18px;flex:0 0 auto}
+.plan .hint{margin-top:8px;color:var(--soft-on-light);font-size:.875rem}
+.plan .pin-wrap{margin-top:12px;border:2px solid var(--hull)}
+.plan .pin-map{height:340px;isolation:isolate;z-index:0;background:var(--tower-2)}
+.plan .pin-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;border-top:2px solid var(--hull);font-size:.875rem;color:var(--soft-on-light)}
+.plan .pin-bar button{appearance:none;background:none;border:0;border-bottom:2px solid var(--flag-on-light);padding:2px 0;cursor:pointer;color:var(--hull);
+  font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.75rem}
+.plan .pin-ok{margin-top:10px;padding:10px 14px;border-left:4px solid var(--flag-on-light);background:var(--tower);font-size:.9375rem;line-height:1.5}
+.plan .pin-ok a,.plan .pin-link{color:var(--hull);font-weight:700;text-decoration:none;border-bottom:2px solid var(--flag-on-light)}
+@media(max-width:860px){
+  .plan .days-list li{grid-template-columns:1fr auto}
+  .plan .days-list .rm{grid-column:1/-1;justify-self:start}
+  .plan .days-done{width:calc(100% - 32px)}
+  .plan .addrow .btn{flex:1 1 100%}
+}
+@media(max-width:520px){
+  .plan .stay-row{flex-wrap:wrap}
+  .plan .pin-btn{flex:1 1 100%;justify-content:center;padding:12px 16px 11px}
+  .plan .pin-map{height:280px}
+}
