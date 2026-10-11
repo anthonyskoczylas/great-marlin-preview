@@ -98,12 +98,12 @@
         <!-- 01 THE DAY -->
         <div class="pane on" data-pane="day">
           <h2>Which day?</h2>
-          <p class="lead">Every price is for your group, not per head. Fishing days seat six, each guest beyond is $100. Surf and island days run to ten, each guest past the base $40.</p>
+          <p class="lead">Every price is for your group, not per head. Every trip includes up to six guests. Fishing days: $100 each beyond six, up to eight aboard. Every other day: $40 each beyond six, up to ten.</p>
           <div class="opts">
             <label class="opt"><input type="radio" name="day" value="full"><b>Full day</b><span class="meta"><em>$1,750</em> · up to six · offshore</span><small>Past the drop, sailfish water. Lunch, beer, water and fruit aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="half"><b>Half day</b><span class="meta"><em>$1,350</em> · up to six · mornings</span><small>Inshore and nearshore — roosterfish, cubera, jacks. Beer, water, fruit, snacks aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="surf"><b>Surf day</b><span class="meta"><em>$1,250</em> · up to six · six hours</span><small>A reef we don&#8217;t name. White sand, empty on purpose, boat access only. Provisioned like the full day.</small></label>
-            <label class="opt"><input type="radio" name="day" value="tortuga"><b>Tortuga Island</b><span class="meta"><em>$1,550</em> · up to eight · no rods</span><small>A day at the island. Water clear enough to snorkel, white sand, lunch aboard.</small></label>
+            <label class="opt"><input type="radio" name="day" value="tortuga"><b>Tortuga Island</b><span class="meta"><em>$1,550</em> · up to six · no rods</span><small>A day at the island. Water clear enough to snorkel, white sand, lunch aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="sunset"><b>Sunset cruise</b><span class="meta"><em>On request</em> · the last hour of light</span><small>The coast from the water, an easy evening run.</small></label>
             <label class="opt"><input type="radio" name="day" value="custom"><b>Custom &amp; events</b><span class="meta"><em>On request</em> · multi-day · film days</span><small>Tell us the occasion. We build the day around it.</small></label>
           </div>
@@ -280,11 +280,11 @@
 
   /* the price sheet mirrors index.html#rates — change both or neither */
   var DAYS = {
-    full:    { name: 'Full day',        desc: 'offshore, past the drop',          price: 1750, base: 6, extra: 100, max: 10, inc: 'Lunch, beer, water and fruit aboard' },
-    half:    { name: 'Half day',        desc: 'inshore and nearshore, mornings',  price: 1350, base: 6, extra: 100, max: 10, inc: 'Beer, water, fruit and snacks aboard' },
+    full:    { name: 'Full day',        desc: 'offshore, past the drop',          price: 1750, base: 6, extra: 100, max: 8, inc: 'Lunch, beer, water and fruit aboard' },
+    half:    { name: 'Half day',        desc: 'inshore and nearshore, mornings',  price: 1350, base: 6, extra: 100, max: 8, inc: 'Beer, water, fruit and snacks aboard' },
     surf:    { name: 'Surf day',        desc: 'the reef, six hours',              price: 1250, base: 6, extra: 40,  max: 10, inc: 'Provisioned like the full day' },
-    tortuga: { name: 'Tortuga Island',  desc: 'the island, no rods',              price: 1550, base: 8, extra: 40,  max: 10, inc: 'Lunch, beer, water and fruit aboard' },
-    sunset:  { name: 'Sunset cruise',   desc: 'the last hour of light',           price: 0,    base: 6, extra: 0,   max: 10, inc: '' },
+    tortuga: { name: 'Tortuga Island',  desc: 'the island, no rods',              price: 1550, base: 6, extra: 40,  max: 10, inc: 'Lunch, beer, water and fruit aboard' },
+    sunset:  { name: 'Sunset cruise',   desc: 'the last hour of light',           price: 0,    base: 6, extra: 40,  max: 10, inc: '' },
     custom:  { name: 'Custom & events', desc: 'multi-day, film days, occasions',  price: 0,    base: 6, extra: 0,   max: 13, inc: '' }
   };
   var RIDES = { none: 'No, we have it covered', hotel: 'Yes, hotel to the boat and back', airport: 'Yes, and the airport', unsure: 'Not sure yet, send options' };
