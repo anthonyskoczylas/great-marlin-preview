@@ -525,7 +525,7 @@ a{color:inherit}
 /* logo (10-10): mark in the nav, colour logo in the boat section, white logo in the footer */
 .brand{display:inline-flex;align-items:center;gap:10px}
 .brand-mark{height:24px;width:auto;display:block}
-.boat-logo{display:block;width:min(260px,62%);height:auto;margin:0 0 22px}
+.boat-logo{display:block;width:min(260px,62%);height:auto;margin:0 0 22px max(0px,calc((min(100%,44ch) - min(260px,62%))/2))}
 .foot-logo{display:block;width:min(300px,78%);height:auto;margin:0 0 22px}
 @media(max-width:520px){.brand-mark{height:18px}.brand{gap:7px}}
 /* footer logo = the full-colour logo on a white card, same as on the white sections (Tony 10-10) */
