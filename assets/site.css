@@ -451,3 +451,18 @@ form.off{display:none}
   .ig-tile:hover::after{opacity:1;transform:none}
 }
 @media(hover:none){.ig-tile:hover img{transform:none;opacity:1}}
+
+/* hover cue on every button (Tony 10-11): lift + clear colour change, solid buttons go turquoise */
+.btn{transition:background .25s,border-color .25s,color .25s,transform .25s,box-shadow .25s}
+.btn svg{transition:transform .25s}
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+  .btn:hover svg{transform:translateX(4px)}
+  html body .btn-flag:hover,html body .btn-solid:hover{background:#0e7471!important;border-color:#0e7471!important;color:#fff!important}
+  html body .btn-flag:hover span,html body .btn-solid:hover span{color:#fff!important}
+}
+.btn:focus-visible{outline:2px solid #0e7471;outline-offset:3px}
+@media (hover:hover){
+  html body .hero-actions .btn-line:hover,html body .on-dark .btn-line:hover,html body #book .btn-line:hover,html body .sheet .btn-line:hover,html body .closer .btn-ghost:hover,html body .band-deep .btn-ghost:hover{background:#fff!important;border-color:#fff!important;color:#131718!important}
+  html body .hero-actions .btn-line:hover span,html body .on-dark .btn-line:hover span,html body #book .btn-line:hover span,html body .sheet .btn-line:hover span{color:#131718!important}
+}

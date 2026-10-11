@@ -115,7 +115,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=10" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=11" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -238,11 +238,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=10') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=11') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=16');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=17');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -256,7 +256,8 @@ a{color:inherit}
 /* turquoise orbit (10-10): the old dawn colour grade tinted the new hull, off */
 .dawn-warm,.dawn-glow{display:none}
 .stage{position:relative;z-index:2;min-height:100svh;display:grid;align-items:start;padding:clamp(86px,13svh,140px) var(--pad) 0}
-.st{grid-area:1/1;max-width:var(--max);width:100%;margin:0 auto}
+.st{grid-area:1/1;max-width:var(--max);width:100%;margin:0 auto;pointer-events:none}
+.st a,.st button,.st .hero-actions{pointer-events:auto}
 #st1 h1{font-size:clamp(2.52rem,7.44vw,7.2rem);color:var(--tower)}
 #st1 h1 .ln{display:block;width:max-content;overflow:hidden;padding:0 .04em .04em 0}
 #st1 h1 .lw,#st1 h1 .li{display:block}
@@ -554,6 +555,21 @@ a{color:inherit}
   .ig-tile:hover::after{opacity:1;transform:none}
 }
 @media(hover:none){.ig-tile:hover img{transform:none;opacity:1}}
+
+/* hover cue on every button (Tony 10-11): lift + clear colour change, solid buttons go turquoise */
+.btn{transition:background .25s,border-color .25s,color .25s,transform .25s,box-shadow .25s}
+.btn svg{transition:transform .25s}
+@media (hover:hover){
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+  .btn:hover svg{transform:translateX(4px)}
+  html body .btn-flag:hover,html body .btn-solid:hover{background:#0e7471!important;border-color:#0e7471!important;color:#fff!important}
+  html body .btn-flag:hover span,html body .btn-solid:hover span{color:#fff!important}
+}
+.btn:focus-visible{outline:2px solid #0e7471;outline-offset:3px}
+@media (hover:hover){
+  html body .hero-actions .btn-line:hover,html body .on-dark .btn-line:hover,html body #book .btn-line:hover,html body .sheet .btn-line:hover,html body .closer .btn-ghost:hover,html body .band-deep .btn-ghost:hover{background:#fff!important;border-color:#fff!important;color:#131718!important}
+  html body .hero-actions .btn-line:hover span,html body .on-dark .btn-line:hover span,html body #book .btn-line:hover span,html body .sheet .btn-line:hover span{color:#131718!important}
+}
 </style>
 </head>
 <body>
@@ -594,7 +610,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=10"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=11"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -752,7 +768,7 @@ a{color:inherit}
     <div class="transom">
       <figure>
         <img src="assets/photos/transom-crew-full.jpg" srcset="assets/photos/transom-crew-full-1000.jpg 1000w, assets/photos/transom-crew-full.jpg 1600w" sizes="(max-width:860px) 100vw, 40vw" alt="The Great Marlin at her mooring, tower and outriggers up, crew and guests on the stern, her name across the transom" loading="lazy" decoding="async">
-        <figcaption>Her name on the transom, back at the mooring</figcaption>
+        <figcaption>Back at the mooring</figcaption>
       </figure>
       <div>
         <p class="d earned">Some boats are named. <em>This one was earned.</em></p>
@@ -805,10 +821,10 @@ a{color:inherit}
         <li><img src="assets/fish/roosterfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Roosterfish</span><span class="ss">All year &#183; inshore</span><span class="nt">The signature inshore fight. Released every time.</span></li>
         <li><img src="assets/fish/cubera.webp" alt="" loading="lazy" decoding="async"><span class="nm">Cubera snapper</span><span class="ss">All year &#183; Jul&#8211;Dec strongest</span><span class="nt">A brawler that lives in the rocks and knows it.</span></li>
         <li><img src="assets/fish/jack.webp" alt="" loading="lazy" decoding="async"><span class="nm">Jack crevalle</span><span class="ss">All year &#183; inshore</span><span class="nt">Pound for pound, the meanest pull of the day.</span></li>
-        <li class="noimg"><span class="nm">Pacific red snapper</span><span class="ss">All year &#183; on the bottom</span><span class="nt">Pargo rojo. Smaller than a cubera, better on the grill.</span></li>
-        <li class="noimg"><span class="nm">Grouper</span><span class="ss">All year &#183; rocks &amp; pinnacles</span><span class="nt">Ten seconds to turn its head, or it&#8217;s back in the rocks.</span></li>
-        <li class="noimg"><span class="nm">Amberjack</span><span class="ss">All year &#183; rock piles</span><span class="nt">Pulls harder for its size than anything else inshore.</span></li>
-        <li class="noimg"><span class="nm">Sierra mackerel</span><span class="ss">Inshore &#183; comes and goes</span><span class="nt">Fast schools, sharp teeth, light tackle. Good dinner, better bait.</span></li>
+        <li><img src="assets/fish/red-snapper.webp" alt="" loading="lazy" decoding="async"><span class="nm">Pacific red snapper</span><span class="ss">All year &#183; on the bottom</span><span class="nt">Pargo rojo. Smaller than a cubera, better on the grill.</span></li>
+        <li><img src="assets/fish/grouper.webp" alt="" loading="lazy" decoding="async"><span class="nm">Grouper</span><span class="ss">All year &#183; rocks &amp; pinnacles</span><span class="nt">Ten seconds to turn its head, or it&#8217;s back in the rocks.</span></li>
+        <li><img src="assets/fish/amberjack.webp" alt="" loading="lazy" decoding="async"><span class="nm">Amberjack</span><span class="ss">All year &#183; rock piles</span><span class="nt">Pulls harder for its size than anything else inshore.</span></li>
+        <li><img src="assets/fish/sierra.webp" alt="" loading="lazy" decoding="async"><span class="nm">Sierra mackerel</span><span class="ss">Inshore &#183; comes and goes</span><span class="nt">Fast schools, sharp teeth, light tackle. Good dinner, better bait.</span></li>
       </ul>
     </div>
   </div>
@@ -973,7 +989,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=7' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=8' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);
@@ -1087,19 +1103,20 @@ document.querySelectorAll('#boat video[data-clip]').forEach(function(v){ lazyPla
   track.addEventListener('scroll', function(){ clearTimeout(settle); settle = setTimeout(function(){ idx = current(); paint(); }, 140); }, { passive: true });
   paint();
   if (reduce) return;
-  /* auto-advance every 5.5s while the row is on screen; any touch, wheel, key or hover holds it, then it picks up again */
+  /* auto-advance: first move 4s after the row comes into view, then every 4s; any touch, wheel, key or hover holds it, then it picks up again */
   var hold = 0, seen = false;
   function wait(ms){ hold = Date.now() + ms; }
   ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach(function(ev){ track.addEventListener(ev, function(){ wait(12000); }, { passive: true }); });
   wrap.querySelectorAll('[data-dir]').forEach(function(b){ b.addEventListener('click', function(){ wait(12000); }); });
   track.addEventListener('mouseenter', function(){ hold = Infinity; });
   track.addEventListener('mouseleave', function(){ wait(2500); });
-  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ seen = es[0].isIntersecting; }, { threshold: 0.35 }).observe(track);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ seen = es[0].isIntersecting; if (seen) wait(4000); }, { threshold: 0.35 }).observe(track);
   setInterval(function(){
     if (!seen || document.hidden || Date.now() < hold) return;
     idx = idx >= cards.length - 1 ? 0 : idx + 1;
     track.scrollTo({ left: Math.min(cards[idx].offsetLeft - track.offsetLeft, maxX()), behavior: 'smooth' }); paint();
-  }, 5500);
+    wait(4000);
+  }, 200);
   if (!('IntersectionObserver' in window)){ cards.forEach(function(c){ var v = c.querySelector('video'); mount(v); v.play().catch(function(){}); }); return; }
   var io = new IntersectionObserver(function(es){ es.forEach(function(en){ var v = en.target.querySelector('video');
     if (en.intersectionRatio >= 0.55){ mount(v); try { v.play().catch(function(){}); } catch(e){} } else { try { v.pause(); } catch(e){} } }); }, { threshold: [0, 0.55, 1] });
