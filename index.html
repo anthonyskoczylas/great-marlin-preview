@@ -115,7 +115,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=12" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=17" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -238,11 +238,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=12') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=17') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=18');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=23');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -342,11 +342,12 @@ a{color:inherit}
 #boat h2{font-size:clamp(1.8rem,4.2vw,4.2rem);max-width:10ch}
 #boat .head p{color:var(--soft-on-light);max-width:44ch;font-size:1.125rem}
 #boat .head p + p{margin-top:14px}
-.reel{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:4px}
+.reel{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px}
 .reel figure{position:relative;margin:0;overflow:hidden;background:var(--hull)}
 .reel video,.reel img{width:100%;height:100%;object-fit:cover}
 .reel .r-main{grid-row:1/3;aspect-ratio:16/10}
-.reel .r-a{aspect-ratio:auto}
+.reel .r-a,.reel .r-b{aspect-ratio:auto;min-height:0}
+.reel .r-a img,.reel .r-b img{position:absolute;inset:0}
 .reel figcaption,.mosaic figcaption{position:absolute;left:14px;bottom:12px;z-index:2;font-family:var(--display);font-stretch:80%;font-weight:800;
   text-transform:uppercase;letter-spacing:.06em;font-size:.8125rem;color:var(--tower);text-shadow:0 1px 10px rgba(19,23,24,.85)}
 .reel figure::after,.mosaic figure::after{content:"";position:absolute;inset:auto 0 0 0;height:36%;z-index:1;pointer-events:none;
@@ -364,7 +365,7 @@ a{color:inherit}
 .transom .reg{margin-top:22px;color:var(--soft-on-light)}
 @media(max-width:860px){
   #boat .head{grid-template-columns:1fr}
-  .reel{grid-template-columns:1fr 1fr}
+  .reel{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .reel .r-main{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
   .reel .r-a,.reel .r-b{aspect-ratio:4/5}
   .specs{grid-template-columns:repeat(2,1fr);row-gap:18px}
@@ -611,7 +612,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=12"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=17"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -754,7 +755,7 @@ a{color:inherit}
         <figcaption>A clear morning at the mooring</figcaption>
       </figure>
       <figure class="r-b">
-        <img src="assets/gm-cabin.jpg" alt="Below deck: the passage forward past the galley and the berths" loading="lazy" decoding="async" style="object-position:50% 60%">
+        <img src="assets/gm-cabin.jpg" alt="Below deck: the passage forward past the galley and the berths" loading="lazy" decoding="async" style="object-position:50% 35%">
         <figcaption>Below deck</figcaption>
       </figure>
     </div>
@@ -820,10 +821,10 @@ a{color:inherit}
         <div class="below-arrows"><button type="button" data-dir="-1" aria-label="Previous clip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12.5 4L6.5 10l6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next clip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7.5 4l6 6-6 6"/></svg></button></div>
       </div>
       <div class="below-track" data-lenis-prevent tabindex="0" aria-label="Below the surface: bait, dolphins and predators. Scroll sideways for more.">
-        <figure class="below-card"><video data-clip="assets/clips/below-bait.mp4" poster="assets/clips/below-bait-poster.jpg" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Bait, balled up</figcaption></figure>
-        <figure class="below-card"><video data-clip="assets/clips/below-dolphins.mp4" poster="assets/clips/below-dolphins-poster.jpg" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Dolphins working the school</figcaption></figure>
-        <figure class="below-card"><video data-clip="assets/clips/below-boil.mp4" poster="assets/clips/below-boil-poster.jpg" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>The surface boils</figcaption></figure>
-        <figure class="below-card"><video data-clip="assets/clips/below-rooster.mp4" poster="assets/clips/below-rooster-poster.jpg" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Predators over the sand</figcaption></figure>
+        <figure class="below-card"><video data-clip="assets/clips/below-bait.mp4?v=2" poster="assets/clips/below-bait-poster.jpg?v=2" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Bait, balled up</figcaption></figure>
+        <figure class="below-card"><video data-clip="assets/clips/below-dolphins.mp4?v=2" poster="assets/clips/below-dolphins-poster.jpg?v=2" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Dolphins working the school</figcaption></figure>
+        <figure class="below-card"><video data-clip="assets/clips/below-boil.mp4?v=2" poster="assets/clips/below-boil-poster.jpg?v=2" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>The surface boils</figcaption></figure>
+        <figure class="below-card"><video data-clip="assets/clips/below-rooster.mp4?v=2" poster="assets/clips/below-rooster-poster.jpg?v=2" muted playsinline loop preload="none" aria-hidden="true"></video><figcaption>Predators over the sand</figcaption></figure>
       </div>
       <div class="below-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
     </div>
@@ -984,7 +985,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=9' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=14' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);
