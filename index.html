@@ -115,7 +115,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=17" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=18" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -238,11 +238,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=17') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=18') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=26');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=27');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -612,7 +612,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=17"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=18"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -985,7 +985,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=17' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=18' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);
