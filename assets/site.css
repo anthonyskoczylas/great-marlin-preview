@@ -234,7 +234,6 @@ figcaption{margin-top:10px;font-family:var(--display);font-stretch:80%;font-weig
 .other-trips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 .other-trips a{display:inline-block;padding:10px 16px;border:2px solid rgba(242,244,243,.35);text-decoration:none;font-family:var(--display);font-stretch:80%;
   font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:.9375rem;transition:border-color .3s,color .3s}
-.other-trips a:hover{border-color:var(--flag);color:var(--flag)}
 
 /* ---------- footer ---------- */
 .foot{background:var(--hull);color:var(--tower);padding:clamp(64px,10vh,110px) 0 28px;border-top:4px solid var(--flag)}
@@ -285,7 +284,6 @@ figcaption{margin-top:10px;font-family:var(--display);font-stretch:80%;font-weig
 .pane .lead{margin-top:14px;color:var(--soft-on-light);max-width:58ch}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
 .opt{position:relative;display:block;padding:18px 18px 18px;background:#fff;border:2px solid var(--rule-light);cursor:pointer;transition:border-color .25s var(--ease),background .25s var(--ease)}
-.opt:hover{border-color:var(--hull)}
 .opt.on{border-color:var(--hull);background:var(--tower);box-shadow:inset 0 4px 0 var(--flag)}
 .opt:focus-within{outline:2px solid var(--flag);outline-offset:2px}
 .opt input{position:absolute;opacity:0;pointer-events:none}
@@ -427,3 +425,29 @@ form.off{display:none}
   .plan .pin-btn{flex:1 1 100%;justify-content:center;padding:12px 16px 11px}
   .plan .pin-map{height:280px}
 }
+
+/* ---------- clickable boxes (Tony 10-10): every box that is a link says so on hover ---------- */
+/* other-days chips on the dark closer: turn solid white, words go charcoal, an arrow slides in */
+.other-trips a{position:relative;padding:10px 22px;cursor:pointer;transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease)}
+.other-trips a span{display:inline-block;transition:transform .25s var(--ease)}
+.other-trips a::after{content:"\2192";position:absolute;right:9px;top:50%;margin-top:-.6em;line-height:1.2;opacity:0;transform:translateX(-6px);transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.other-trips a:focus-visible{background:var(--tower);border-color:var(--tower);color:var(--hull)}
+.other-trips a:focus-visible span{transform:translateX(-7px)}
+.other-trips a:focus-visible::after{opacity:1;transform:none}
+/* trip options on the plan page are already white: lift + turquoise edge */
+.opt{transition:border-color .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease)}
+/* Instagram tiles keep their zoom and gain a label */
+.ig-tile{position:relative}
+.ig-tile::after{content:"View on Instagram \2192";position:absolute;left:0;right:0;bottom:0;padding:48px 16px 14px;background:linear-gradient(180deg,rgba(19,23,24,0),rgba(19,23,24,.85));
+  color:#fff;font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.875rem;line-height:1.2;
+  opacity:0;transform:translateY(8px);transition:opacity .25s var(--ease),transform .25s var(--ease);pointer-events:none}
+.ig-tile:focus-visible::after{opacity:1;transform:none}
+@media(hover:hover){
+  .other-trips a:hover{background:var(--tower);border-color:var(--tower);color:var(--hull)}
+  .other-trips a:hover span{transform:translateX(-7px)}
+  .other-trips a:hover::after{opacity:1;transform:none}
+  .opt:hover{border-color:var(--flag-on-light);transform:translateY(-2px);box-shadow:0 14px 28px -18px rgba(19,23,24,.45)}
+  .opt.on:hover{border-color:var(--hull);box-shadow:inset 0 4px 0 var(--flag),0 14px 28px -18px rgba(19,23,24,.45)}
+  .ig-tile:hover::after{opacity:1;transform:none}
+}
+@media(hover:none){.ig-tile:hover img{transform:none;opacity:1}}

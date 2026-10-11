@@ -115,7 +115,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=9" media="(min-width: 861px), (pointer: fine)">
+<link rel="preload" as="image" href="assets/orbit360-poster.jpg?v=10" media="(min-width: 861px), (pointer: fine)">
 <script>
 document.documentElement.className += ' js';
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -238,11 +238,11 @@ a{color:inherit}
 
 /* ================= HERO: the 360 ================= */
 #opening{position:relative;min-height:100svh;overflow:hidden;background:#c3ccd6}
-.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=9') center/cover no-repeat}
+.opening-media{position:absolute;inset:0;z-index:0;background:#c3ccd6 url('assets/orbit360-poster.jpg?v=10') center/cover no-repeat}
 .opening-media video{width:100%;height:100%;object-fit:cover}
 @media(max-aspect-ratio:1/1){.opening-media video{object-fit:contain;background:#c3ccd6}}
 @media(max-width:860px) and (pointer:coarse){
-  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=15');background-size:cover;background-position:center}
+  .opening-media{height:100svh;background-image:url('assets/orbit360-mobile-poster.jpg?v=16');background-size:cover;background-position:center}
   #openingMedia video{object-fit:cover;object-position:center}
 }
 /* dawn grade carried over from the live hero (warms the cool render) */
@@ -425,6 +425,9 @@ a{color:inherit}
 .species .nt{margin-top:auto;padding-top:14px;color:var(--soft-on-dark);font-size:.9375rem;line-height:1.5}
 @media(max-width:1100px){.species{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.species li{min-height:0}.species img{height:80px}}
+.species li.noimg{min-height:0}
+@media(max-width:520px){.species li{padding:18px 14px 20px}.species .nm{font-size:.9rem}} /* two columns at 390px: keep ROOSTERFISH / AMBERJACK inside the card */
+.species li.noimg .nt{padding-top:28px}
 
 /* ================= RATES (tower white rate board) ================= */
 #rates .head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:end;margin-bottom:clamp(40px,6vh,64px)}
@@ -444,7 +447,6 @@ a{color:inherit}
 .rate .go .btn{padding:12px 18px 11px;font-size:.875rem}
 .rate .go .wa{font-size:.8125rem;font-family:var(--display);font-stretch:80%;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--soft-on-light);text-decoration:none;border-bottom:1px solid var(--rule-light)}
 .rate .go .wa:hover{color:var(--hull);border-color:var(--flag)}
-.rate:hover{background:var(--tower-2)}
 .math{margin-top:28px;max-width:70ch;color:var(--soft-on-light)}
 .math b{color:var(--hull)}
 .beyond{margin-top:34px;display:flex;flex-wrap:wrap;gap:22px 40px}
@@ -527,6 +529,31 @@ a{color:inherit}
 @media(max-width:520px){.brand-mark{height:18px}.brand{gap:7px}}
 /* footer logo = the full-colour logo on a white card, same as on the white sections (Tony 10-10) */
 .foot-logo{background:#fff;padding:22px 26px 18px;border-radius:14px;box-sizing:border-box;width:min(320px,82%)}
+
+/* clickable boxes (Tony 10-10): every box that is a link says so on hover.
+   Rate rows sit on white, so they lift + get a turquoise edge and arrow; the name link covers the whole row. */
+.rate{position:relative;transition:background .25s var(--ease),box-shadow .25s var(--ease),transform .25s var(--ease)}
+.rate h3 a::after{content:"";position:absolute;inset:0;z-index:1}
+.rate .go{position:relative;z-index:2}
+.rate::before{content:"";position:absolute;left:-14px;top:0;bottom:0;width:4px;background:var(--flag-on-light);transform:scaleY(0);transform-origin:50% 100%;transition:transform .25s var(--ease)}
+.rate h3::after{content:"\2192";display:inline-block;margin-left:.45em;font-family:var(--display);font-weight:800;color:var(--flag-on-light);opacity:0;transform:translateX(-10px);transition:opacity .25s var(--ease),transform .25s var(--ease)}
+.rate:has(h3 a:focus-visible){background:#fff;box-shadow:0 18px 36px -22px rgba(19,23,24,.45)}
+.rate:has(h3 a:focus-visible)::before{transform:scaleY(1)}
+.rate:has(h3 a:focus-visible) h3::after{opacity:1;transform:none}
+/* Instagram tiles keep their zoom and gain a label */
+.ig-tile{position:relative}
+.ig-tile::after{content:"View on Instagram \2192";position:absolute;left:0;right:0;bottom:0;padding:48px 16px 14px;background:linear-gradient(180deg,rgba(19,23,24,0),rgba(19,23,24,.85));
+  color:#fff;font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.875rem;line-height:1.2;
+  opacity:0;transform:translateY(8px);transition:opacity .25s var(--ease),transform .25s var(--ease);pointer-events:none}
+.ig-tile:focus-visible::after{opacity:1;transform:none}
+@media(hover:hover){
+  .rate:hover{background:#fff;box-shadow:0 18px 36px -22px rgba(19,23,24,.45);transform:translateY(-2px)}
+  .rate:hover::before{transform:scaleY(1)}
+  .rate:hover h3 a{color:var(--flag-on-light)}
+  .rate:hover h3::after{opacity:1;transform:none}
+  .ig-tile:hover::after{opacity:1;transform:none}
+}
+@media(hover:none){.ig-tile:hover img{transform:none;opacity:1}}
 </style>
 </head>
 <body>
@@ -567,7 +594,7 @@ a{color:inherit}
 <!-- ================= HERO: the 360, scroll turns her ================= -->
 <section id="opening">
   <div class="opening-media" id="openingMedia">
-    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=9"></video>
+    <video muted playsinline webkit-playsinline preload="auto" aria-hidden="true" data-src="assets/orbit360.mp4?v=10"></video>
     <div class="dawn-warm" aria-hidden="true"></div>
     <div class="dawn-glow" aria-hidden="true"></div>
   </div>
@@ -656,25 +683,25 @@ a{color:inherit}
         <div class="go"><a class="btn btn-flag" href="book.html?day=half">Plan this day</a><a class="wa" href="half-day-fishing-charter.html">Trip details</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20half%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
       </div>
       <div class="rate">
-        <h3 class="d">Surf day</h3>
+        <h3 class="d"><a href="book.html?day=surf">Surf day</a></h3>
         <p class="desc">A reef we don&#8217;t name. White sand, empty on purpose, boat access only. Provisioned like the full day.</p>
         <p class="price">$1,250<small>Up to six &#183; six hours</small></p>
         <div class="go"><a class="btn btn-flag" href="book.html?day=surf">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20surf%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
       </div>
       <div class="rate">
-        <h3 class="d">Tortuga Island</h3>
+        <h3 class="d"><a href="book.html?day=tortuga">Tortuga Island</a></h3>
         <p class="desc">A day at the island. White sand, water clear enough to snorkel, no rods.</p>
         <p class="price">$1,550<small>Up to eight guests</small></p>
         <div class="go"><a class="btn btn-flag" href="book.html?day=tortuga">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20Tortuga%20Island%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
       </div>
       <div class="rate">
-        <h3 class="d">Sunset cruise</h3>
+        <h3 class="d"><a href="book.html?day=sunset">Sunset cruise</a></h3>
         <p class="desc">The last hour of light, the coast from the water, an easy evening run.</p>
         <p class="price req">On request</p>
         <div class="go"><a class="btn btn-flag" href="book.html?day=sunset">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20sunset%20cruise." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
       </div>
       <div class="rate">
-        <h3 class="d">Custom &amp; events</h3>
+        <h3 class="d"><a href="book.html?day=custom">Custom &amp; events</a></h3>
         <p class="desc">Multi-day runs, film days, occasions.</p>
         <p class="price req">On request</p>
         <div class="go"><a class="btn btn-flag" href="book.html?day=custom">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20a%20custom%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
@@ -778,6 +805,10 @@ a{color:inherit}
         <li><img src="assets/fish/roosterfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Roosterfish</span><span class="ss">All year &#183; inshore</span><span class="nt">The signature inshore fight. Released every time.</span></li>
         <li><img src="assets/fish/cubera.webp" alt="" loading="lazy" decoding="async"><span class="nm">Cubera snapper</span><span class="ss">All year &#183; Jul&#8211;Dec strongest</span><span class="nt">A brawler that lives in the rocks and knows it.</span></li>
         <li><img src="assets/fish/jack.webp" alt="" loading="lazy" decoding="async"><span class="nm">Jack crevalle</span><span class="ss">All year &#183; inshore</span><span class="nt">Pound for pound, the meanest pull of the day.</span></li>
+        <li class="noimg"><span class="nm">Pacific red snapper</span><span class="ss">All year &#183; on the bottom</span><span class="nt">Pargo rojo. Smaller than a cubera, better on the grill.</span></li>
+        <li class="noimg"><span class="nm">Grouper</span><span class="ss">All year &#183; rocks &amp; pinnacles</span><span class="nt">Ten seconds to turn its head, or it&#8217;s back in the rocks.</span></li>
+        <li class="noimg"><span class="nm">Amberjack</span><span class="ss">All year &#183; rock piles</span><span class="nt">Pulls harder for its size than anything else inshore.</span></li>
+        <li class="noimg"><span class="nm">Sierra mackerel</span><span class="ss">Inshore &#183; comes and goes</span><span class="nt">Fast schools, sharp teeth, light tackle. Good dinner, better bait.</span></li>
       </ul>
     </div>
   </div>
@@ -942,7 +973,7 @@ function mountOrbit(){
   var mobile = !ORBIT_MQ.matches;
   v.muted = true; v.setAttribute('playsinline', '');
   var s = document.createElement('source');
-  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=6' : v.getAttribute('data-src');
+  s.src = mobile ? 'assets/orbit360-scrub.mp4?v=7' : v.getAttribute('data-src');
   s.type = 'video/mp4'; v.appendChild(s); v.load();
 }
 if (ORBIT_MQ.addEventListener) ORBIT_MQ.addEventListener('change', mountOrbit);
