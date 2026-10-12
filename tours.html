@@ -80,8 +80,8 @@
 
   <!-- ============ HERO ============ -->
   <header class="pg-hero">
-    <div class="pg-hero-media"><img src="assets/photos/head-falls.jpg?v=1" alt="A jungle waterfall falling into a green pool, a scarlet macaw on a branch" fetchpriority="high" style="object-position:65% 50%;--mpos:79% 50%"></div>
-    <div class="pg-hero-grade"></div>
+    <div class="pg-hero-media"><img src="assets/photos/head-falls-real.jpg?v=2" alt="A two-tier jungle waterfall falling into a green pool near the coast" fetchpriority="high" style="object-position:60% 50%;--mpos:64% 50%"></div>
+    <div class="pg-hero-grade" style="background:linear-gradient(90deg,rgba(8,14,24,.7) 0%,rgba(8,14,24,.45) 40%,rgba(8,14,24,.05) 70%),linear-gradient(180deg,rgba(8,14,24,0) 60%,rgba(8,14,24,.5) 100%)"></div>
     <div class="pg-hero-inner shell">
       <h1>The days you're not fishing.</h1>
       <p class="sub">A fishing week is never only fishing. The days ashore run through our tour partner, Infinite Discoveries &#8212; rainforest, waterfalls, parks. The days on the water never leave our own boat: an island run, a sunset cruise, a surf trip. One thread books all of it.</p>
@@ -116,6 +116,27 @@
       </div>
     </div>
   </section>
+
+  <!-- ============ FROM THE TRAIL (Tony's own photos + clips, 10-11) ============ -->
+  <section class="band" id="gallery">
+    <div class="shell">
+      <div class="sec-head"><h2 class="d sec-title">Off the boat</h2><p class="sec-sub lbl">Waterfalls near the coast</p></div>
+      <div class="g-grid">
+        <figure class="g-card"><img src="assets/photos/tours-falls-1-900.jpg" alt="A waterfall tucked in the jungle" loading="lazy" decoding="async"><figcaption>A waterfall tucked in the jungle</figcaption></figure>
+        <figure class="g-card"><video src="assets/clips/tours-img-3226.mp4" poster="assets/clips/tours-img-3226-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>The pool at the bottom</figcaption></figure>
+        <figure class="g-card"><img src="assets/photos/tours-falls-2-900.jpg" alt="Falls over the rocks" loading="lazy" decoding="async"><figcaption>Falls over the rocks</figcaption></figure>
+        <figure class="g-card"><video src="assets/clips/tours-img-3246.mp4" poster="assets/clips/tours-img-3246-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Mist off the falls</figcaption></figure>
+        <figure class="g-card"><video src="assets/clips/tours-img-3276.mp4" poster="assets/clips/tours-img-3276-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Two tiers, one swim</figcaption></figure>
+      </div>
+    </div>
+  </section>
+  <style>
+    #gallery .g-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:clamp(12px,1.6vw,20px)}
+    #gallery .g-card{margin:0;position:relative;overflow:hidden;border-radius:2px;background:#0b1214}
+    #gallery .g-card video,#gallery .g-card img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}
+    #gallery .g-card figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.65))}
+    @media (max-width:760px){#gallery .g-grid{grid-template-columns:1fr 1fr;gap:10px}#gallery .g-card figcaption{padding:28px 10px 10px;font-size:.68rem;letter-spacing:.06em}}
+  </style>
 
   <!-- ============ 02 THE DAYS ============ -->
   <section class="band band-deep" id="days">
