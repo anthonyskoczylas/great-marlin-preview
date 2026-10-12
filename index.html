@@ -294,7 +294,7 @@ a{color:inherit}
 #water h2{font-size:clamp(1.62rem,3.48vw,3.6rem);max-width:17ch}
 #water .lede-row{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
 #water .lede-left{display:flex;flex-direction:column;gap:clamp(28px,4vh,44px)}
-#water .lede-photo{margin:0;max-width:400px}
+#water .lede-photo{margin:0 0 clamp(20px,3vh,32px);max-width:400px}
 #water .lede-photo img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover;object-position:50% 72%;border-radius:2px}
 #water .lede-photo figcaption{margin-top:10px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft-on-pacific)}
 @media(max-width:860px){#water .lede-photo{max-width:none}}
@@ -648,10 +648,7 @@ a{color:inherit}
     <div class="lede-row">
       <div class="lede-left">
       <h2 class="d">This stretch of Pacific releases more sailfish than almost anywhere on earth.</h2>
-      <figure class="lede-photo"><img src="assets/photos/brothers-sailfish-1200.jpg?v=1" srcset="assets/photos/brothers-sailfish-700.jpg?v=1 700w, assets/photos/brothers-sailfish-1200.jpg?v=1 1200w" sizes="(max-width:860px) 100vw, 440px" alt="Four brothers leaning over the gunwale of the Great Marlin with a sailfish alongside before release" loading="lazy" decoding="async"><figcaption>Sailfish alongside, released</figcaption></figure>
-      </div>
-      <div>
-        <figure class="coast" aria-label="Costa Rica from above, with the Great Marlin's home port at Herradura Bay marked">
+      <figure class="coast" aria-label="Costa Rica from above, with the Great Marlin's home port at Herradura Bay marked">
           <img src="assets/map/costa-rica-1600.jpg" srcset="assets/map/costa-rica-900.jpg 900w, assets/map/costa-rica-1600.jpg 1600w" sizes="(max-width:860px) 100vw, 44vw" alt="Satellite view of Costa Rica and its Pacific coast, the seafloor shading showing deep water close offshore" loading="lazy" decoding="async">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <line x1="41.15" y1="49.38" x2="35.24" y2="58.46" stroke="#ffffff" stroke-width="2" stroke-dasharray="5 4" vector-effect="non-scaling-stroke"/>
@@ -667,6 +664,9 @@ a{color:inherit}
           <span class="tag tag-ocean">Pacific Ocean</span>
           <figcaption>Imagery: NASA Blue Marble</figcaption>
         </figure>
+      </div>
+      <div>
+        <figure class="lede-photo"><img src="assets/photos/brothers-sailfish-1200.jpg?v=2" srcset="assets/photos/brothers-sailfish-700.jpg?v=2 700w, assets/photos/brothers-sailfish-1200.jpg?v=2 1200w" sizes="(max-width:860px) 100vw, 440px" alt="Four brothers leaning over the gunwale of the Great Marlin with a sailfish alongside before release" loading="lazy" decoding="async"><figcaption>Sailfish alongside, released</figcaption></figure>
         <p class="body">The Great Marlin fishes it out of Herradura. The seafloor falls away fast here, and the big water starts where other coasts are still wading.</p>
         <p class="body">We run it year round. Billfish released, meat fish kept, weather respected.</p>
       </div>
