@@ -235,7 +235,9 @@ figcaption{margin-top:10px;font-family:var(--display);font-stretch:80%;font-weig
 .closer .btn-ghost{border-color:var(--flag);color:var(--flag)}
 .closer .btn-ghost:hover{background:var(--flag);border-color:var(--flag);color:var(--flag-ink)}
 
-@media(max-width:860px){.pg-hero-grade{background:linear-gradient(180deg,rgba(19,23,24,.4) 0%,rgba(19,23,24,.55) 30%,rgba(19,23,24,.9) 62%,rgba(19,23,24,.97) 100%)}}
+/* phone (Tony 10-11): photo gets its own band on top, words sit under it on the dark field, so the picture is actually seen.
+   Each page can aim the crop with --mpos on the img (falls back to centre). */
+@media(max-width:860px){.pg-hero,.pg-hero-short{display:block;min-height:0}.pg-hero-media{position:relative;inset:auto;height:min(58svh,520px)}.pg-hero-media img{object-position:var(--mpos,50% 50%)!important}.pg-hero-grade{inset:auto;top:0;left:0;right:0;height:min(58svh,520px);background:linear-gradient(180deg,rgba(19,23,24,.35) 0%,rgba(19,23,24,0) 22%,rgba(19,23,24,0) 62%,var(--hull) 100%)!important}.pg-hero-inner,.pg-hero-short .pg-hero-inner{padding-top:0;margin-top:-56px;padding-bottom:56px}}
 
 /* ---------- trip pages: hero actions + the other days ---------- */
 .pg-hero .closer-actions{margin-top:26px}
