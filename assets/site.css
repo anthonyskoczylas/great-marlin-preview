@@ -63,6 +63,13 @@ a{color:inherit}
 .nav-links a{font-family:var(--display);font-stretch:80%;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.875rem;
   text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:border-color .3s}
 .nav-links a:hover,.nav-links a[aria-current="page"]{border-color:var(--flag)}
+.nav-links .has-drop{position:relative}
+.nav-links .drop{position:absolute;top:100%;left:-18px;min-width:210px;margin:0;padding:10px 0 8px;list-style:none;background:var(--hull);border:1px solid var(--rule-dark);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .2s,transform .2s,visibility .2s}
+.nav-links .has-drop:hover .drop,.nav-links .has-drop:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.nav-links .drop a{display:block;padding:10px 18px;border-bottom:0;white-space:nowrap}
+.nav-links .drop a:hover{color:var(--flag)}
+.nav-links .caret{width:9px;height:6px;margin-left:6px;vertical-align:2px;transition:transform .2s}
+.nav-links .has-drop:hover .caret,.nav-links .has-drop:focus-within .caret{transform:rotate(180deg)}
 .nav-cta{display:flex;align-items:center;gap:10px}
 .topnav .btn{padding:10px 16px 9px;font-size:.875rem}
 .menu-btn{display:none;background:none;border:2px solid currentColor;color:inherit;width:42px;height:42px;cursor:pointer;align-items:center;justify-content:center}
