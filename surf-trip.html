@@ -124,7 +124,7 @@
       <div class="g-grid">
         <figure class="g-card"><video src="assets/clips/surf-dawn.mp4" poster="assets/clips/surf-dawn-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>First light at the reef</figcaption></figure>
         <figure class="g-card"><video src="assets/clips/surf-heading-out.mp4" poster="assets/clips/surf-heading-out-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Heading out to the reef</figcaption></figure>
-        <figure class="g-card"><video src="assets/clips/surf-boat.mp4" poster="assets/clips/surf-boat-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Board over the side, straight in</figcaption></figure>
+        <figure class="g-card"><video src="assets/clips/surf-boat.mp4?v=2" poster="assets/clips/surf-boat-poster.jpg?v=2" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Board over the side, straight in</figcaption></figure>
         <figure class="g-card"><video src="assets/clips/surf-pov.mp4" poster="assets/clips/surf-pov-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Out at the reef</figcaption></figure>
         <figure class="g-card"><video src="assets/clips/surf-spray.mp4" poster="assets/clips/surf-spray-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Spray in your face</figcaption></figure>
       </div>
@@ -146,29 +146,27 @@
           <p class="prose">We anchor off the reef, you throw your board over the side and jump in after it. Between sessions the boat is your base: shade, food, a cold drink, and turtles under the hull.</p>
           <p class="prose">We don’t print the wave’s name. “A reef we don’t name” is the trip. You will see it when you get there.</p>
           <p class="prose">Six hours on the water, provisioned like the full day: lunch, beer, water and fruit aboard.</p>
-        </div>
-      </div>
       <div class="surfcast" id="surfcast" hidden aria-live="polite">
         <div class="sc-head"><h3>Surf forecast</h3><span class="sc-time" id="scTime"></span></div>
         <div class="sc-grid" id="scGrid"></div>
         <p class="sc-note">Swell and wind each morning at 7 am on the open water off Herradura. We make the final call on the reef that morning.</p>
       </div>
       <style>
-        .surfcast{margin-top:clamp(56px,9vh,96px);border-top:2px solid var(--ink)}
+        .surfcast{margin-top:clamp(40px,6vh,64px);border-top:2px solid var(--ink)}
         .surfcast[hidden]{display:none}
         .sc-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px 0 18px}
         .sc-head h3{font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:1rem}
         .sc-time{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--muted)}
-        .sc-grid{display:grid;grid-template-columns:repeat(7,1fr);border-top:1px solid var(--line)}
-        .sc-day{padding:18px 14px 20px;border-right:1px solid var(--line)}
-        .sc-day:last-child{border-right:0}
-        .sc-day .d{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-        .sc-day .h{display:block;margin-top:10px;font-family:var(--sans);font-weight:700;font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.1}
-        .sc-day .p,.sc-day .w{display:block;margin-top:8px;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;color:var(--ink-soft)}
-        .sc-day .tag{display:inline-block;margin-top:10px;padding:3px 8px;border:1px solid var(--line);font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase}
+        .sc-grid{border-top:1px solid var(--line)}
+        .sc-day{display:grid;grid-template-columns:76px 54px 1fr auto;align-items:baseline;column-gap:14px;padding:12px 10px;border-bottom:1px solid var(--line)}
+        .sc-day .d{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+        .sc-day .h{font-family:var(--sans);font-weight:700;font-size:1.25rem;line-height:1}
+        .sc-day .p,.sc-day .w{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--ink-soft)}
+        .sc-day .w{grid-column:3}
+        .sc-day .tag{grid-column:4;grid-row:1 / span 2;align-self:center;padding:3px 8px;border:1px solid var(--line);font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
         .sc-day.today{background:rgba(246,245,243,.05)}
-        .sc-note{margin-top:18px;font-size:.8rem;color:var(--muted);max-width:60ch}
-        @media (max-width:860px){.sc-grid{grid-template-columns:repeat(2,1fr)}.sc-day{border-bottom:1px solid var(--line)}.sc-day:nth-child(2n){border-right:0}.sc-day:nth-child(n+5){display:none}}
+        .sc-note{margin-top:16px;font-size:.8rem;color:var(--muted);max-width:60ch}
+        @media (max-width:480px){.sc-day{grid-template-columns:62px 46px 1fr;column-gap:10px}.sc-day .tag{grid-column:3;grid-row:auto;justify-self:start;margin-top:6px}}
       </style>
       <script>
       (function(){
@@ -202,6 +200,9 @@
         load();
       })();
       </script>
+        </div>
+      </div>
+
     </div>
   </section>
 
