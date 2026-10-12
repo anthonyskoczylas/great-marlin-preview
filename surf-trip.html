@@ -123,7 +123,6 @@
       <div class="sec-head"><h2 class="d sec-title">From the water</h2><p class="sec-sub lbl">Real days on this boat</p></div>
       <div class="g-grid">
         <figure class="g-card"><video src="assets/clips/surf-dawn.mp4" poster="assets/clips/surf-dawn-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>First light at the reef</figcaption></figure>
-        <figure class="g-card"><img src="assets/photos/surf-barrel-tall-900.jpg" alt="Nobody else out" loading="lazy" decoding="async"><figcaption>Nobody else out</figcaption></figure>
         <figure class="g-card"><video src="assets/clips/surf-boat.mp4" poster="assets/clips/surf-boat-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Board over the side, straight in</figcaption></figure>
         <figure class="g-card"><video src="assets/clips/surf-pov.mp4" poster="assets/clips/surf-pov-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video><figcaption>Out at the reef</figcaption></figure>
         <figure class="g-card"><img src="assets/photos/surf-spray-900.jpg" alt="Spray in your face" loading="lazy" decoding="async"><figcaption>Spray in your face</figcaption></figure>
@@ -148,9 +147,21 @@
           <p class="prose">Six hours on the water, provisioned like the full day: lunch, beer, water and fruit aboard.</p>
         </div>
       </div>
-      <div class="pull"><p>Boat entry only.</p><p class="src">It’s a private beach. The only way to the wave is the boat, and the boat is yours for the day.</p></div>
+
     </div>
   </section>
+  <section class="pull-band" aria-label="Boat entry only.">
+    <img src="assets/photos/surf-barrel-wide.jpg?v=3" alt="An empty A-frame wave peeling over the reef, shot from the water" loading="lazy" decoding="async" style="object-position:30% 50%">
+    <div class="shell"><div class="pull"><p>Boat entry only.</p><p class="src">It’s a private beach. The only way to the wave is the boat, and the boat is yours for the day.</p></div></div>
+  </section>
+  <style>
+    .pull-band{position:relative;min-height:clamp(420px,78vh,820px);display:flex;align-items:flex-end;overflow:hidden;background:#0b1214}
+    .pull-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .pull-band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(19,23,24,0) 45%,rgba(19,23,24,.72) 100%)}
+    .pull-band .shell{position:relative;z-index:2;width:100%}
+    .pull-band .pull{color:#fff;border-left-color:#fff;margin:0 0 clamp(40px,8vh,90px)}
+    .pull-band .pull .src{color:rgba(255,255,255,.85)}
+  </style>
 
   <section class="band" id="included">
     <div class="shell">
