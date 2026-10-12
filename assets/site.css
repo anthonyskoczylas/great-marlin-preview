@@ -139,6 +139,8 @@ a{color:inherit}
 .band:not(.band-deep) .cal .mo i{background:rgba(19,23,24,.07)}
 .cal .mo.good i{background:var(--pacific-bar)}
 .cal .mo.peak i{background:var(--flag)}
+.cal tr.inshore-first{border-top:2px solid currentColor}
+@media(max-width:760px){.cal{min-width:0;table-layout:fixed}.cal thead th{font-size:.58rem;padding:10px 0;letter-spacing:0}.cal thead th:first-child{width:34%}.cal tbody th{font-size:.62rem;line-height:1.25;white-space:normal;padding:12px 8px 12px 0}.cal .mo{padding:12px 1px}.cal .mo i{height:12px}} /* phone: whole year fits, no hidden sideways scroll */
 .cal-key{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:var(--display);font-stretch:80%;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.8125rem}
 .cal-key span{display:inline-flex;align-items:center;gap:9px}
 .cal-key i{width:26px;height:14px;display:inline-block}

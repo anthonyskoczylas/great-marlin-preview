@@ -299,6 +299,8 @@ a{color:inherit}
 .on-light{background:var(--tower);color:var(--hull)}
 #rates + #boat{border-top:1px solid var(--rule-light)} /* prices moved under the water (10-10): two white fields meet here */
 .sec{padding:clamp(88px,13vh,160px) 0}
+#boat + #rates{border-top:1px solid var(--rule-light)}
+@media(max-width:760px){.sec{padding:64px 0}#boat + #rates{padding-top:52px}} /* phone: two white sections were stacking ~210px of empty space (Tony 10-11) */
 #water h2{font-size:clamp(1.62rem,3.48vw,3.6rem);max-width:17ch}
 #water .lede-row{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}
 #water .lede-left{display:flex;flex-direction:column;gap:clamp(28px,4vh,44px)}
@@ -482,7 +484,8 @@ a{color:inherit}
 @media(max-width:860px){
   #book{display:block;min-height:0}
   #book .bg{position:relative;height:62svh}
-  #book .bg img{object-position:70% 50%}
+  #book .bg img{object-position:64% 50%}
+  img[style*="--mpos"]{object-position:var(--mpos)!important} /* .mpos-ok phone crop aim */
   #book::after{inset:0 0 auto 0;height:62svh;background:linear-gradient(180deg,rgba(19,23,24,0) 70%,rgba(19,23,24,1) 100%)}
   #book .wrap{padding-top:8px}
 }
@@ -698,7 +701,7 @@ a{color:inherit}
         <figcaption>Off Herradura</figcaption>
       </figure>
       <figure class="r-a">
-        <img src="assets/gm-hero.jpg?v=7" alt="The Great Marlin at a mooring on a clear morning, her name across the transom, green hills behind" loading="lazy" decoding="async" style="object-position:40% 55%">
+        <img src="assets/gm-hero.jpg?v=7" alt="The Great Marlin at a mooring on a clear morning, her name across the transom, green hills behind" loading="lazy" decoding="async" style="object-position:40% 55%;--mpos:74% 55%">
         <figcaption>A clear morning at the mooring</figcaption>
       </figure>
       <figure class="r-b">
@@ -796,7 +799,7 @@ a{color:inherit}
       <figure class="m2"><img src="assets/photos/roosterfish.jpg" alt="A roosterfish held up on the bow before release, the coast behind" loading="lazy" decoding="async" style="object-position:50% 35%"><figcaption>Roosterfish, inshore, released</figcaption></figure>
       <figure class="m3"><img src="assets/photos/sail-boatside.jpg" alt="A marlin alongside the boat, held by the bill at the gunwale before release" loading="lazy" decoding="async" style="object-position:30% 50%"><figcaption>Marlin at the gunwale</figcaption></figure>
       <figure class="m4"><img src="assets/photos/family-mahi.jpg" alt="A family of six on the stern holding a mahi mahi, the wake bright behind them" loading="lazy" decoding="async" style="object-position:50% 65%"><figcaption>Mahi, heading home</figcaption></figure>
-      <figure class="m5"><img src="assets/photos/sail-jump.jpg" alt="A sailfish tail-walking a boat-length off the stern" loading="lazy" decoding="async" style="object-position:50% 40%"><figcaption>Tail-walking, a boat-length off</figcaption></figure>
+      <figure class="m5"><img src="assets/photos/sail-jump.jpg" alt="A sailfish tail-walking a boat-length off the stern" loading="lazy" decoding="async" style="object-position:22% 40%"><figcaption>Tail-walking, a boat-length off</figcaption></figure>
     </div>
 
     <div class="below" id="below">
@@ -824,13 +827,13 @@ a{color:inherit}
         <a class="textlink" href="costa-rica-fishing.html">The seasons, the numbers, the law</a>
       </div>
       <ul class="species">
-        <li class="lead"><img src="assets/fish/sailfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Pacific sailfish</span><span class="ss">Dec&#8211;Apr peak &#183; Jun&#8211;Aug second run</span><span class="nt">The reason this coast is famous, and the fish we plan the day around.</span></li>
-        <li><img src="assets/fish/yellowfin.webp" alt="" loading="lazy" decoding="async"><span class="nm">Yellowfin tuna</span><span class="ss">Aug&#8211;Oct peak &#183; from May</span><span class="nt">Found under the spinner dolphin. Sashimi on the ride home.</span></li>
-        <li><img src="assets/fish/mahi.webp" alt="" loading="lazy" decoding="async"><span class="nm">Mahi mahi</span><span class="ss">Nov&#8211;Dec run &#183; green season</span><span class="nt">Colour, acrobatics, dinner.</span></li>
-        <li><img src="assets/fish/marlin.webp" alt="" loading="lazy" decoding="async"><span class="nm">Blue marlin</span><span class="ss">Jul&#8211;Oct &#183; offshore &#183; a bonus</span><span class="nt">The real fishery is sixty miles further out. On a day trip, a blue is luck.</span></li>
-        <li><img src="assets/fish/wahoo.webp" alt="" loading="lazy" decoding="async"><span class="nm">Wahoo</span><span class="ss">No reliable season</span><span class="nt">The fastest strike in the spread. We won&#8217;t print a calendar we can&#8217;t defend.</span></li>
-        <li><img src="assets/fish/roosterfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Roosterfish</span><span class="ss">All year &#183; inshore</span><span class="nt">The signature inshore fight. Released every time.</span></li>
-        <li><img src="assets/fish/cubera.webp" alt="" loading="lazy" decoding="async"><span class="nm">Cubera snapper</span><span class="ss">All year &#183; Jul&#8211;Dec strongest</span><span class="nt">A brawler that lives in the rocks and knows it.</span></li>
+        <li class="lead"><img src="assets/fish/sailfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Pacific sailfish</span><span class="ss">Dec&#8211;Apr peak &#183; around all year</span><span class="nt">The reason this coast is famous, and the fish we plan the day around.</span></li>
+        <li><img src="assets/fish/yellowfin.webp" alt="" loading="lazy" decoding="async"><span class="nm">Yellowfin tuna</span><span class="ss">May&#8211;Sep peak &#183; most of the year</span><span class="nt">Found under the spinner dolphin. Sashimi on the ride home.</span></li>
+        <li><img src="assets/fish/mahi.webp" alt="" loading="lazy" decoding="async"><span class="nm">Mahi mahi</span><span class="ss">Sep&#8211;Nov peak &#183; green season</span><span class="nt">Colour, acrobatics, dinner.</span></li>
+        <li><img src="assets/fish/marlin.webp" alt="" loading="lazy" decoding="async"><span class="nm">Blue marlin</span><span class="ss">Jun&#8211;Sep &#183; offshore &#183; a bonus</span><span class="nt">The real fishery is sixty miles further out. On a day trip, a blue is luck.</span></li>
+        <li><img src="assets/fish/wahoo.webp" alt="" loading="lazy" decoding="async"><span class="nm">Wahoo</span><span class="ss">May&#8211;Jun peak &#183; offshore</span><span class="nt">The fastest strike in the spread.</span></li>
+        <li><img src="assets/fish/roosterfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Roosterfish</span><span class="ss">All year &#183; Dec&#8211;Apr strongest</span><span class="nt">The signature inshore fight. Released every time.</span></li>
+        <li><img src="assets/fish/cubera.webp" alt="" loading="lazy" decoding="async"><span class="nm">Cubera snapper</span><span class="ss">All year &#183; Feb&#8211;Apr strongest</span><span class="nt">A brawler that lives in the rocks and knows it.</span></li>
         <li><img src="assets/fish/jack.webp" alt="" loading="lazy" decoding="async"><span class="nm">Jack crevalle</span><span class="ss">All year &#183; inshore</span><span class="nt">Pound for pound, the meanest pull of the day.</span></li>
         <li><img src="assets/fish/red-snapper.webp" alt="" loading="lazy" decoding="async"><span class="nm">Pacific red snapper</span><span class="ss">All year &#183; on the bottom</span><span class="nt">Pargo rojo. Smaller than a cubera, better on the grill.</span></li>
         <li><img src="assets/fish/grouper.webp" alt="" loading="lazy" decoding="async"><span class="nm">Grouper</span><span class="ss">All year &#183; rocks &amp; pinnacles</span><span class="nt">Ten seconds to turn its head, or it&#8217;s back in the rocks.</span></li>
