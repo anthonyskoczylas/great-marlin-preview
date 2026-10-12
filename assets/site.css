@@ -95,6 +95,7 @@ a{color:inherit}
 .pg-hero-inner{position:relative;z-index:2;width:100%;padding-top:140px;padding-bottom:clamp(48px,8vh,96px)}
 .pg-hero h1{font-family:var(--headline);font-stretch:100%;font-weight:400;text-transform:uppercase;line-height:1.1;
   font-size:clamp(2.04rem,5.4vw,5.16rem);max-width:12ch;text-wrap:balance}
+@media(max-width:480px){.pg-hero h1{font-size:7.4vw;max-width:none}} /* long words (HERRADURA) must fit a phone */
 .pg-hero .sub{margin-top:22px;max-width:46ch;color:var(--soft-on-dark);font-size:1.125rem}
 .pg-hero .stamp{margin-top:28px;display:flex;gap:10px;flex-wrap:wrap}
 .pg-hero .stamp span{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;color:var(--tower);border:2px solid var(--rule-dark);padding:7px 10px}
@@ -473,3 +474,9 @@ form.off{display:none}
   html body .hero-actions .btn-line:hover,html body .on-dark .btn-line:hover,html body #book .btn-line:hover,html body .sheet .btn-line:hover,html body .closer .btn-ghost:hover,html body .band-deep .btn-ghost:hover{background:#fff!important;border-color:#fff!important;color:#131718!important}
   html body .hero-actions .btn-line:hover span,html body .on-dark .btn-line:hover span,html body #book .btn-line:hover span,html body .sheet .btn-line:hover span{color:#131718!important}
 }
+
+/* phone: make it obvious there is more below the hero (Tony 10-11). JS adds .scroll-cue, removes it on first scroll */
+@keyframes cueBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+.scroll-cue{display:none}
+@media(max-width:860px){.scroll-cue{display:block;position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));z-index:40;transform:translateX(-50%);white-space:nowrap;font-family:var(--display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.8125rem;color:#fff;text-decoration:none;padding:11px 20px;border:2px solid rgba(255,255,255,.85);border-radius:999px;background:rgba(10,14,20,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 6px 24px rgba(0,0,0,.35);animation:cueBob 1.8s ease-in-out infinite;transition:opacity .35s}.scroll-cue.gone{opacity:0;pointer-events:none}}
+@media(prefers-reduced-motion:reduce){.scroll-cue{animation:none}}
