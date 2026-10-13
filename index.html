@@ -279,6 +279,7 @@ a{color:inherit}
 .hero-foot .scrollcue svg{width:16px;height:16px;animation:nudge 2.2s var(--ease) infinite}
 @keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
 .hero-foot .scrollcue .sc-m{display:none}
+.hero-foot a.scrollcue{text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
 @media(max-width:760px){.hero-foot .scrollcue{margin:0 auto;padding:11px 20px;border:2px solid rgba(255,255,255,.85);border-radius:0;background:rgba(10,14,20,.45);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);font-size:.875rem;letter-spacing:.1em}.hero-foot .scrollcue .sc-d{display:none}.hero-foot .scrollcue .sc-m{display:inline}.hero-foot .scrollcue svg{width:18px;height:18px}}
 .hero-foot .coords{white-space:nowrap;order:-1}
 @media(max-width:1000px){.hero-foot .coords{display:none}}
@@ -484,10 +485,10 @@ a{color:inherit}
 /* phones: photo on top with the boat whole, words on the hull below it */
 @media(max-width:860px){
   #book{display:block;min-height:0}
-  #book .bg{position:relative;height:62svh}
-  #book .bg img{object-position:64% 50%}
+  #book .bg{position:relative;height:auto;aspect-ratio:16/11}
+  #book .bg img{object-position:70% 50%}
   img[style*="--mpos"]{object-position:var(--mpos)!important} /* .mpos-ok phone crop aim */
-  #book::after{inset:0 0 auto 0;height:62svh;background:linear-gradient(180deg,rgba(19,23,24,0) 70%,rgba(19,23,24,1) 100%)}
+  #book::after{inset:0 0 auto 0;height:auto;aspect-ratio:16/11;background:linear-gradient(180deg,rgba(19,23,24,0) 70%,rgba(19,23,24,1) 100%)}
   #book .wrap{padding-top:8px}
 }
 #book .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(56px,10vh,110px)}
@@ -648,7 +649,7 @@ a{color:inherit}
     <div class="st st-line" id="st3"><h2 class="d">The water turns to ink. The riggers go up.</h2></div>
   </div>
   <div class="hero-foot">
-    <span class="scrollcue"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v11M3.5 8.5L8 13l4.5-4.5"/></svg><span class="sc-d">Scroll to turn her</span><span class="sc-m">Scroll for more</span></span>
+    <a class="scrollcue" href="#water" data-scroll aria-label="Scroll past the boat to the rest of the page"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v11M3.5 8.5L8 13l4.5-4.5"/></svg><span class="sc-d">Scroll to turn her</span><span class="sc-m">Scroll for more</span></a>
     <span class="data coords" id="liveCoords">[ 09&#176; 38' 43" N &#183; 84&#176; 39' 35" W ]</span>
     <span class="wx-chip data" id="wxChip"><i></i><span id="wxChipTxt"></span></span>
   </div>
@@ -800,7 +801,7 @@ a{color:inherit}
       <figure class="m2"><img src="assets/photos/roosterfish.jpg" alt="A roosterfish held up on the bow before release, the coast behind" loading="lazy" decoding="async" style="object-position:50% 35%"><figcaption>Roosterfish, inshore, released</figcaption></figure>
       <figure class="m3"><img src="assets/photos/sail-boatside.jpg" alt="A marlin alongside the boat, held by the bill at the gunwale before release" loading="lazy" decoding="async" style="object-position:30% 50%"><figcaption>Marlin at the gunwale</figcaption></figure>
       <figure class="m4"><img src="assets/photos/family-mahi.jpg" alt="A family of six on the stern holding a mahi mahi, the wake bright behind them" loading="lazy" decoding="async" style="object-position:50% 65%"><figcaption>Mahi, heading home</figcaption></figure>
-      <figure class="m5"><img src="assets/photos/sail-jump.jpg" alt="A sailfish tail-walking a boat-length off the stern" loading="lazy" decoding="async" style="object-position:22% 40%"><figcaption>Tail-walking, a boat-length off</figcaption></figure>
+      <figure class="m5"><img src="assets/photos/sail-jump.jpg" alt="A sailfish tail-walking a boat-length off the stern" loading="lazy" decoding="async" style="object-position:22% 40%;--mpos:0% 40%"><figcaption>Tail-walking, a boat-length off</figcaption></figure>
     </div>
 
     <div class="below" id="below">
@@ -825,7 +826,7 @@ a{color:inherit}
     <div class="chase" style="margin-bottom:0">
       <div class="chase-head">
         <h3 class="d">What we chase</h3>
-        <a class="textlink" href="costa-rica-fishing.html">The seasons, the numbers, the law</a>
+        <a class="textlink" href="costa-rica-fishing.html">The seasons, the fish, the law</a>
       </div>
       <ul class="species">
         <li class="lead"><img src="assets/fish/sailfish.webp" alt="" loading="lazy" decoding="async"><span class="nm">Pacific sailfish</span><span class="ss">Dec&#8211;Apr peak &#183; around all year</span><span class="nt">The reason this coast is famous, and the fish we plan the day around.</span></li>
@@ -978,7 +979,7 @@ if (hasGSAP && typeof Lenis !== 'undefined' && !reduce){
 }
 function goTo(sel, now){
   var t = document.querySelector(sel); if (!t) return;
-  if (lenis) lenis.scrollTo(t, { offset: sel === '#opening' ? 0 : -60, immediate: !!now }); else t.scrollIntoView({ behavior: (reduce || now) ? 'auto' : 'smooth' });
+  if (lenis) lenis.scrollTo(t, { offset: sel === '#opening' ? 0 : -60, immediate: !!now, duration: sel === '#water' ? 2.6 : 1.1 }); else t.scrollIntoView({ behavior: (reduce || now) ? 'auto' : 'smooth' });
 }
 /* arriving from another page with a section (e.g. index.html#boat): jump there once pins are measured */
 if (window.__arrive && /^#[\w-]+$/.test(window.__arrive)){
