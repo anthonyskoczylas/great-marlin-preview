@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#091228">
 <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=2d193ff1">
 <script>document.documentElement.className+=' js';</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -104,7 +104,7 @@
             <label class="opt"><input type="radio" name="day" value="full"><b>Full day</b><span class="meta"><em>$1,750</em> · up to six · offshore</span><small>Past the drop, sailfish water. Lunch, beer, water and fruit aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="half"><b>Half day</b><span class="meta"><em>$1,350</em> · up to six · mornings</span><small>Inshore and nearshore — roosterfish, cubera, jacks. Beer, water, fruit, snacks aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="surf"><b>Surf day</b><span class="meta"><em>$1,450</em> · up to six · six hours</span><small>A reef we don&#8217;t name. White sand, empty on purpose, boat access only. Provisioned like the full day.</small></label>
-            <label class="opt"><input type="radio" name="day" value="tortuga"><b>Tortuga Island</b><span class="meta"><em>$1,550</em> · up to six · no rods</span><small>A day at the island. Water clear enough to snorkel, white sand, lunch aboard.</small></label>
+            <label class="opt"><input type="radio" name="day" value="tortuga"><b>Tortuga Island</b><span class="meta"><em>On request</em> · the island · no rods</span><small>A day at the island. Water clear enough to snorkel, white sand, lunch aboard.</small></label>
             <label class="opt"><input type="radio" name="day" value="sunset"><b>Sunset cruise</b><span class="meta"><em>On request</em> · the last hour of light</span><small>The coast from the water, an easy evening run.</small></label>
             <label class="opt"><input type="radio" name="day" value="custom"><b>Custom &amp; events</b><span class="meta"><em>On request</em> · multi-day · film days</span><small>Tell us the occasion. We build the day around it.</small></label>
           </div>
@@ -273,7 +273,7 @@
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=6c1ee310" defer></script>
 <script>
 (function(){
   var $ = function(s, c){ return (c || document).querySelector(s); };
@@ -285,7 +285,7 @@
     full:    { name: 'Full day',        desc: 'offshore, past the drop',          price: 1750, base: 6, extra: 100, max: 8, inc: 'Lunch, beer, water and fruit aboard' },
     half:    { name: 'Half day',        desc: 'inshore and nearshore, mornings',  price: 1350, base: 6, extra: 100, max: 8, inc: 'Beer, water, fruit and snacks aboard' },
     surf:    { name: 'Surf day',        desc: 'the reef, six hours',              price: 1450, base: 6, extra: 40,  max: 10, inc: 'Provisioned like the full day' },
-    tortuga: { name: 'Tortuga Island',  desc: 'the island, no rods',              price: 1550, base: 6, extra: 40,  max: 10, inc: 'Lunch, beer, water and fruit aboard' },
+    tortuga: { name: 'Tortuga Island',  desc: 'the island, no rods',              price: 0,    base: 6, extra: 40,  max: 10, inc: '' },
     sunset:  { name: 'Sunset cruise',   desc: 'the last hour of light',           price: 0,    base: 6, extra: 40,  max: 10, inc: '' },
     custom:  { name: 'Custom & events', desc: 'multi-day, film days, occasions',  price: 0,    base: 6, extra: 0,   max: 13, inc: '' }
   };

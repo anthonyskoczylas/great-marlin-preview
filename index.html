@@ -92,21 +92,6 @@
         "url":"https://greatmarlin.com/#rates",
         "seller":{"@id":"https://greatmarlin.com/#business"}
       }
-    },
-    {
-      "@type":"Product",
-      "name":"Tortuga Island day trip",
-      "description":"A day at Tortuga Island aboard Great Marlin - white sand and clear water for snorkelling, no fishing. Private, up to six guests; each additional guest $40, up to ten.",
-      "image":"https://greatmarlin.com/assets/gm-hero.jpg?v=7",
-      "brand":{"@id":"https://greatmarlin.com/#business"},
-      "offers":{
-        "@type":"Offer",
-        "price":"1550",
-        "priceCurrency":"USD",
-        "availability":"https://schema.org/InStock",
-        "url":"https://greatmarlin.com/#rates",
-        "seller":{"@id":"https://greatmarlin.com/#business"}
-      }
     }
   ]
 }
@@ -769,7 +754,7 @@ a{color:inherit}
       <div class="rate">
         <h3 class="d"><a href="book.html?day=tortuga">Tortuga Island</a></h3>
         <p class="desc">A day at the island. White sand, water clear enough to snorkel, no rods.</p>
-        <p class="price">$1,550<small>Up to six guests</small></p>
+        <p class="price req">On request</p>
         <div class="go"><a class="btn btn-flag" href="book.html?day=tortuga">Plan this day</a><a class="wa" href="https://wa.me/13213561951?text=Hi%20%E2%80%94%20asking%20about%20the%20Tortuga%20Island%20day." target="_blank" rel="noopener">Ask on WhatsApp</a></div>
       </div>
       <div class="rate">
@@ -1118,6 +1103,11 @@ function lazyPlay(v, onMount){
   }); }, { rootMargin: '200px 0px' }).observe(v);
 }
 document.querySelectorAll('#boat video[data-clip]').forEach(function(v){ lazyPlay(v); });
+/* Low Power Mode on iPhone blocks autoplay: a tap anywhere starts any loaded clip that is on screen (Tony 10-12) */
+(function(){ function wake(){ document.querySelectorAll('video[data-clip]').forEach(function(v){
+  if (!v.paused || !v.querySelector('source')) return; var r = v.getBoundingClientRect();
+  if (r.bottom > 0 && r.top < innerHeight && r.right > 0 && r.left < innerWidth){ var p = v.play(); if (p && p.catch) p.catch(function(){}); } }); }
+  document.addEventListener('touchend', wake, { passive: true }); document.addEventListener('click', wake); })();
 
 /* ---------- below the surface: sideways row, each clip plays while mostly in view ---------- */
 (function(){
