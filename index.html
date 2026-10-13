@@ -979,7 +979,7 @@ if (hasGSAP && typeof Lenis !== 'undefined' && !reduce){
 }
 function goTo(sel, now){
   var t = document.querySelector(sel); if (!t) return;
-  if (lenis) lenis.scrollTo(t, { offset: sel === '#opening' ? 0 : -60, immediate: !!now, duration: sel === '#water' ? 2.6 : 1.1 }); else t.scrollIntoView({ behavior: (reduce || now) ? 'auto' : 'smooth' });
+  if (lenis) lenis.scrollTo(t, { offset: sel === '#opening' ? 0 : -60, immediate: !!now, duration: sel === '#water' ? 5.2 : 1.1 }); else t.scrollIntoView({ behavior: (reduce || now) ? 'auto' : 'smooth' });
 }
 /* arriving from another page with a section (e.g. index.html#boat): jump there once pins are measured */
 if (window.__arrive && /^#[\w-]+$/.test(window.__arrive)){
