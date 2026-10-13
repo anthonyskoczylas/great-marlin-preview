@@ -15,7 +15,7 @@
 /* phone scroll cue: shows on load when the page has a hero, fades on first scroll, tap = scroll down */
 (function(){
   var hero = document.querySelector(".pg-hero"); if (!hero || window.scrollY > 40) return;
-  var c = document.createElement("a"); c.className = "scroll-cue"; c.href = "#"; c.textContent = "Scroll for more \u2193";
+  var c = document.createElement("a"); c.className = "scroll-cue"; c.href = "#"; c.textContent = "Tap / scroll for more \u2193";
   c.addEventListener("click", function(e){ e.preventDefault(); window.scrollBy({ top: window.innerHeight * 0.8, behavior: "smooth" }); });
   document.body.appendChild(c);
   function hide(){ if (window.scrollY > 60){ c.classList.add("gone"); window.removeEventListener("scroll", hide); setTimeout(function(){ c.remove(); }, 400); } }

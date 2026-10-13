@@ -383,8 +383,8 @@ form.off{display:none}
 .boat-logo{display:block;width:min(260px,62%);height:auto;margin:0 0 22px}
 .foot-logo{display:block;width:min(300px,78%);height:auto;margin:0 0 22px}
 @media(max-width:520px){.brand-mark{height:18px}.brand{gap:7px}}
-/* footer logo = the full-colour logo on a white card, same as on the white sections (Tony 10-10) */
-.foot-logo{background:#fff;padding:22px 26px 18px;border-radius:14px;box-sizing:border-box;width:min(320px,82%)}
+/* logo = shirt artwork: teal boat + teal windows, teal words, no card (Tony 10-12) */
+.foot-logo{width:min(320px,82%)}
 
 /* planner: several days in one request (10-10). The added days sit in a hull-ruled box over the steps;
    the day on screen joins them when the request goes. */
